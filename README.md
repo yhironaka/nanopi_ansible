@@ -19,7 +19,7 @@ ansibleの勉強として作りました。
 - ansible 2.7.1
 - python version = 3.7.1
 - nanopi-neo2_sd_friendlycore-xenial_4.14_arm64_20181011.img
-- Nano Pi Neo / Neo2
+- Nano Pi Neo2
 
 Nano Piにssh接続できれば、すぐに実行できます。  
 IPアドレスorホスト名、ssh用のID、パスワードを用意してください。
