@@ -1,6 +1,6 @@
 # ansible sample for Nano Pi
 
-Nano Piを簡単にセットアップするためのansibleスクリプトです。　　
+Nano Piを簡単にセットアップするためのansibleスクリプトです。  
 ansibleの勉強として作りました。
 小一時間で、以下のすべてのイントールと設定を実行できます。
 
@@ -44,7 +44,7 @@ hostsに接続するNano PiのIPアドレスorホスト名を記入します。
 ```
 [app10]
 #app10.local
-192.168.22.43
+192.168.1.43
 ```
 
 ansible-galaxyよりnetdata、node-redのロールをインストールします。
