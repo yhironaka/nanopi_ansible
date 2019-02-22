@@ -1,0 +1,6 @@
+---
+apt:
+  all_update_flag: True
+  all_upgrade_flag: True
+  packages:
+    - name: nfs-common

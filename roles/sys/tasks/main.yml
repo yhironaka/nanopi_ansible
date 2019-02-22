@@ -1,0 +1,9 @@
+---
+- name: set locale to '{{ sys.locale }}'
+  locale_gen:
+    name: '{{ sys.locale }}'
+    state: present
+
+- name: set timezone to '{{ sys.timezone }}'
+  timezone:
+    name: '{{ sys.timezone }}'

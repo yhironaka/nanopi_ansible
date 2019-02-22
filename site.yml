@@ -1,0 +1,18 @@
+- hosts: app10
+  roles:
+    - apt
+    - sys
+    - mount
+    - folder2ram
+    - mrlesmithjr.netdata
+    - nodejs
+    - trombik.node_red
+  vars:
+    mount:
+      targets:
+        - { 'device'    : 'tmpfs', 'mountpoint': '/tmp', 'filesystem': 'tmpfs', 'option'    : 'defaults' }
+#        - { 'device'    : 'nas01.local:/export/public/'     , 'mountpoint': '/mnt/public/'
+#          , 'filesystem': 'nfs' , 'option'    : 'defaults' }
+    node_red_extra_npm_packages:
+      - name: node-red-contrib-alexa-home-skill
+      - name: node-red-node-ping

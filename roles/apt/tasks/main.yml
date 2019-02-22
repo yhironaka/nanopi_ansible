@@ -1,0 +1,21 @@
+---
+- name: install aptitude
+  apt: pkg=aptitude
+
+- name: update all packages
+  apt:
+    upgrade: dist
+  when: apt.all_update_flag
+
+- name: upgrade all packages
+  apt:
+    name: '*'
+    state: latest
+  when: apt.all_upgrade_flag
+
+- name: install apt packages
+  apt:
+    name: '{{ item.name }}'
+    state: '{{ item.state | default("present") }}'
+    update_cache: yes
+  with_items: '{{ apt.packages }}'

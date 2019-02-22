@@ -1,0 +1,4 @@
+---
+nodejs:
+  arm_v8_dl_url:
+    https://nodejs.org/dist/v11.10.0/node-v11.10.0-linux-arm64.tar.xz

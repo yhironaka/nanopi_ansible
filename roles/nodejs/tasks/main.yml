@@ -1,0 +1,28 @@
+---
+- name: make directory
+  file: path=/usr/lib/node_modules state=directory owner=root group=root mode=0755
+
+- name: extract
+  unarchive:
+    src: '{{ nodejs.arm_v8_dl_url }}'
+    dest: /usr/lib/node_modules
+    remote_src: yes
+    extra_opts: [--strip-components=1]
+
+- name: link
+  file:
+    src: '/usr/lib/node_modules/bin/{{ item.src }}'
+    dest: '/usr/bin/{{ item.dest }}'
+    state: link
+    force: yes
+  with_items:
+    - { src: 'npm', dest: 'npm' }
+    - { src: 'npx', dest: 'npx' }
+
+- name: copy
+  copy:
+    src: '/usr/lib/node_modules/bin/node'
+    dest: '/usr/bin/node'
+    mode: 0755
+    force: yes
+    remote_src: yes

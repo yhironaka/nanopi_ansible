@@ -1,0 +1,28 @@
+---
+- name: get script from web
+  get_url:
+    url: https://raw.githubusercontent.com/bobafetthotmail/folder2ram/master/debian_package/sbin/folder2ram
+    dest: '/sbin/folder2ram'
+    mode: 0755
+    force: yes
+    remote_src: yes
+
+- name: mkdir folder2ram for conf file
+  file:
+    path:   '/etc/folder2ram'
+    state:  directory
+
+- name: copy conf file
+  copy:
+    src: 'folder2ram.conf'
+    dest: '/etc/folder2ram/folder2ram.conf'
+    mode: 0755
+    force: yes
+
+- name: enablesystemd
+  shell: folder2ram -enablesystemd
+  changed_when: False
+
+- name: enablesystemd
+  shell: folder2ram -mountall
+  changed_when: False

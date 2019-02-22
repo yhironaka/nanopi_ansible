@@ -1,0 +1,22 @@
+---
+- name: install apt packages
+  apt:
+    name:   '{{ item.name }}'
+    state:  '{{ item.state | default("present") }}'
+    update_cache: yes
+  with_items: '{{ apt.packages }}'
+
+- name: mkdir mountpoint
+  file:
+    path:   '{{ item.mountpoint }}'
+    state:  directory
+  with_items: '{{ mount.targets }}'
+
+- name: mount all
+  mount:
+    name:   '{{ item.mountpoint }}'
+    src:    '{{ item.device }}'
+    fstype: '{{ item.filesystem }}'
+    opts:   '{{ item.option }}'
+    state:  mounted
+  with_items: '{{ mount.targets }}'
