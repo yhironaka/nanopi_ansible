@@ -53,7 +53,7 @@ $ ansible-galaxy install mrlesmithjr.netdata
 $ ansible-galaxy install trombik.node_red
 ```
 
-以下のコマンドで実行します。
+以下のコマンドで実行します。  
 sshのパスワードを聞かれますので入力してください。
 ```
 $ ansible-playbook site.yml
@@ -80,8 +80,8 @@ TASK [apt : install apt packages] **********************************************
 ・・・
 ```
 
-- node-redは以下のアドレスで開きます。
+- node-redは以下のアドレスで開きます。  
 http://「Nano PiのIPアドレスorホスト名.local」:1880/
 
-- netdataは以下のアドレスで開きます。
+- netdataは以下のアドレスで開きます。  
 http://「Nano PiのIPアドレスorホスト名.local」:19999/
