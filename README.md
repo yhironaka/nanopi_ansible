@@ -49,8 +49,8 @@ hostsに接続するNano PiのIPアドレスorホスト名を記入します。
 
 ansible-galaxyよりnetdata、node-redのロールをインストールします。
 ```
-$ ansible-galaxy install mrlesmithjr.netdata
-$ ansible-galaxy install trombik.node_red
+$ sudo ansible-galaxy install mrlesmithjr.netdata
+$ sudo ansible-galaxy install trombik.node_red
 ```
 
 以下のコマンドで実行します。  
