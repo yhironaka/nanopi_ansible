@@ -43,7 +43,10 @@ hostsでlocalhostを指定すると、Nano Pi の中で実行を完結できま�
 $ sudo apt-get install gcc libffi-dev libssl-dev sshpass
 $ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 $ sudo python get-pip.py
-$ sudo pip install cryptography oci ansible jinja2
+$ sudo pip install cryptography
+$ sudo pip install oci
+$ sudo pip install ansible
+$ sudo pip install jinja2
 ```
 
 ### Installing
